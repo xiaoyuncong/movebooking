@@ -28,6 +28,7 @@ public class EncodeFilter implements Filter {
         System.out.println("哈哈哈哈哈哈");
         System.out.println("没错,我是认真的");
         System.out.println("master test");
+        System.out.println("push test");
         chain.doFilter(req, resp);
     }
 
