@@ -20,11 +20,12 @@ public class EncodeFilter implements Filter {
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
 
-            req =(HttpServletRequest)req;
-            resp=(HttpServletResponse)resp;
+        req = (HttpServletRequest) req;
+        resp = (HttpServletResponse) resp;
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=utf-8");
         System.out.println("老板是傻逼");
+        System.out.println("哈哈哈哈哈哈");
         chain.doFilter(req, resp);
     }
 
