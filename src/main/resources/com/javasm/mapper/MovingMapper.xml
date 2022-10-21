@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javasm.mapper.MovingMapper">
+    
+    <resultMap id="MoveResultMap" type="com.javasm.pojo.MovingBooking">
+        <result column="cartype" property="carType"></result>
+        <result column="movedate" property="moveDate"></result>
+    </resultMap>
+
+
+    <insert id="save" >
+
+        insert  into move_booking(area,cartype,movedate,contact,phone,status) values(#{mv.area},#{mv.carType},
+        #{mv.moveDate},#{mv.contact},#{mv.phone},#{mv.status});
+
+    </insert>
+    <update id="updateStatusById">
+        update move_booking set status =2 where id =#{id};
+    </update>
+
+
+    <select id="selectAll" resultMap="MoveResultMap">
+        select id,area,cartype,movedate,contact,phone,status from move_booking order by
+        movedate asc;
+
+    </select>
+    <select id="count" resultType="java.lang.Long">
+        select count(*) from move_booking;
+    </select>
+
+    <select id="findByPager" resultMap="MoveResultMap">
+
+        select id,area,cartype,movedate,contact,phone,status from
+        move_booking order by  movedate asc limit #{page},#{size};
+
+    </select>
+</mapper>
