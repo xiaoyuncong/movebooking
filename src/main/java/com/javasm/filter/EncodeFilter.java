@@ -26,6 +26,7 @@ public class EncodeFilter implements Filter {
         resp.setContentType("text/html;charset=utf-8");
         System.out.println("老板是傻逼");
         System.out.println("哈哈哈哈哈哈");
+        System.out.println("没错,我是认真的");
         chain.doFilter(req, resp);
     }
 
