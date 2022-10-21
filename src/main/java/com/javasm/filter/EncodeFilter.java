@@ -24,7 +24,7 @@ public class EncodeFilter implements Filter {
             resp=(HttpServletResponse)resp;
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=utf-8");
-
+        System.out.println("老板是傻逼");
         chain.doFilter(req, resp);
     }
 
